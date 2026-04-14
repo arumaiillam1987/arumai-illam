@@ -5,35 +5,119 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arumai Illam</title>
 
-<link rel="stylesheet" href="style.css">
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
-.hero {
-  background:#ecf0f1;
-  padding:60px 20px;
-  text-align:center;
+
+/* GENERAL */
+body { margin:0; font-family:Arial; }
+html { scroll-behavior:smooth; }
+
+/* NAVBAR */
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#2c3e50;
+  padding:10px 20px;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
-.section {
-  padding:40px 20px;
-  max-width:1000px;
-  margin:auto;
+.logo { font-weight:bold; font-size:20px; }
+
+.nav-links { display:flex; gap:15px; }
+
+.nav-links a, .dropdown button {
+  color:white; text-decoration:none;
+  background:none; border:none;
+  cursor:pointer;
 }
 
-h1, h2 {
+.donate-btn {
+  background:#e74c3c;
+  padding:8px 12px;
+  border-radius:5px;
+}
+
+/* DROPDOWN */
+.dropdown { position:relative; }
+.dropdown-content {
+  display:none;
+  position:absolute;
+  background:white;
+  min-width:180px;
+}
+.dropdown-content a {
   color:#2c3e50;
+  padding:10px;
+  display:block;
+}
+.dropdown.show .dropdown-content { display:block; }
+
+/* MOBILE */
+.menu-toggle { display:none; cursor:pointer; }
+@media(max-width:768px){
+  .menu-toggle { display:block; }
+  .nav-links { display:none; flex-direction:column; width:100%; }
+  .nav-links.show { display:flex; }
 }
 
-ul {
-  margin-left:20px;
-}
+/* SLIDER */
+.slider { overflow:hidden; }
+.slides { display:flex; width:300%; animation:slide 12s infinite; }
+.slide img { width:100%; height:400px; object-fit:cover; }
 
-.highlight {
-  background:#f9f9f9;
+.caption {
+  position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  color:white;
+  background:rgba(0,0,0,0.5);
   padding:20px;
-  border-left:5px solid #27ae60;
-  margin:20px 0;
 }
+
+@keyframes slide {
+  0%{transform:translateX(0)}
+  33%{transform:translateX(-100%)}
+  66%{transform:translateX(-200%)}
+  100%{transform:translateX(0)}
+}
+
+/* SECTION */
+.section { padding:50px 20px; text-align:center; }
+
+/* CARDS */
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.card {
+  padding:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+.card:hover { transform:translateY(-5px); }
+
+/* IMPACT */
+.impact { background:#27ae60; color:white; }
+.impact-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+}
+
+/* CTA */
+.cta { background:#2c3e50; color:white; padding:40px; }
+.btn {
+  background:#e74c3c;
+  padding:10px 20px;
+  color:white;
+  text-decoration:none;
+}
+
 </style>
 </head>
 
@@ -41,98 +125,161 @@ ul {
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <a href="index.html">Home</a>
+  <div class="logo">Arumai Illam</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-  <div class="dropdown">
-    <button class="dropbtn">About Us</button>
-    <div class="dropdown-content">
-      <a href="about-history.html">History</a>
-      <a href="about-board.html">Board Members</a>
+  <div class="nav-links" id="navLinks">
+
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+      <button onclick="toggleDropdown(event)">About ▾</button>
+      <div class="dropdown-content">
+        <a href="about-history.html">History</a>
+        <a href="about-board.html">Board</a>
+      </div>
     </div>
-  </div>
 
-  <div class="dropdown">
-    <button class="dropbtn">Programmes</button>
-    <div class="dropdown-content">
-      <a href="program-seniors.html">Home for Senior Citizens</a>
-      <a href="program-school.html">School for Intellectually Disabled</a>
+    <div class="dropdown">
+      <button onclick="toggleDropdown(event)">Programmes ▾</button>
+      <div class="dropdown-content">
+        <a href="program-seniors.html">Senior Citizens</a>
+        <a href="program-school.html">School</a>
+      </div>
     </div>
-  </div>
 
-  <a href="why.html">Why Trust Us?</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="donate.html">Donate</a>
-  <a href="contact.html">Contact Us</a>
+    <a href="why.html">Why Trust Us?</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="donate.html" class="donate-btn">Donate</a>
+    <a href="contact.html">Contact</a>
+
+  </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Arumai Illam</h1>
-  <h2>Serving the Forgotten with Love</h2>
+<!-- SLIDER -->
+<div class="slider">
+
+<div class="slides">
+
+<div class="slide">
+<img src="images/slide1.jpg">
+<div class="caption">
+<h1>Serving the Forgotten with Love</h1>
+</div>
 </div>
 
-<!-- INTRO -->
-<div class="section">
-  <h2>Welcome to Arumai Illam</h2>
-  <p>
-    Arumai Illam is a registered charitable society located in Chozhanpettai, Mayiladuthurai, Tamil Nadu. Founded in 1987, Arumai Illam has been a beacon of care and compassion for the most vulnerable members of society — particularly senior citizens, destitutes, and intellectually disabled children.
-  </p>
+<div class="slide">
+<img src="images/slide2.jpg">
+<div class="caption">
+<h1>Care for Elderly</h1>
+</div>
+</div>
 
-  <p>
-    Our work is rooted in the belief that every human being deserves dignity, love, and the right to live in a safe, nurturing environment, regardless of their age, ability, or background.
-  </p>
+<div class="slide">
+<img src="images/slide3.jpg">
+<div class="caption">
+<h1>Support Special Children</h1>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" data-aos="fade-up">
+<h2>Welcome to Arumai Illam</h2>
+<p>Providing care, dignity, and hope since 1987.</p>
 </div>
 
 <!-- SERVICES -->
-<div class="section">
-  <h2>Our Core Services</h2>
+<div class="section" data-aos="fade-up">
+<h2>Our Services</h2>
 
-  <div class="highlight">
-    <h3>Home for Senior Citizens</h3>
-    <p>A peaceful and secure home for abandoned elderly individuals and destitutes.</p>
+<div class="cards">
 
-    <ul>
-      <li>Comfortable shelter and daily care</li>
-      <li>Nutritious meals</li>
-      <li>Medical attention and regular check-ups</li>
-      <li>Companionship and emotional support</li>
-      <li>Loving and respectful environment</li>
-    </ul>
-  </div>
-
-  <div class="highlight">
-    <h3>School of Hope for Intellectually Disabled</h3>
-    <p>A dedicated special school focusing on care-based education and skill-building.</p>
-
-    <ul>
-      <li>Basic academic learning</li>
-      <li>Social and emotional development</li>
-      <li>Daily living skills (hygiene, communication)</li>
-      <li>Individual attention and customized plans</li>
-    </ul>
-  </div>
-
+<div class="card" data-aos="zoom-in">
+<h3>Senior Citizens Home</h3>
 </div>
 
-<!-- BELIEF -->
-<div class="section">
-  <h2>Our Belief</h2>
-
-  <ul>
-    <li><strong>Compassion</strong> – Love and care can heal beyond medicine</li>
-    <li><strong>Dignity</strong> – Every life deserves respect</li>
-    <li><strong>Commitment</strong> – Serving the neglected with honesty and hope</li>
-  </ul>
-
-  <p>
-    Arumai Illam is more than just a home or a school — it is a family for those who have none, and a lifeline for those who are often forgotten.
-  </p>
+<div class="card" data-aos="zoom-in">
+<h3>Special School</h3>
 </div>
 
-<!-- FOOTER -->
-<footer style="background:#2c3e50;color:white;text-align:center;padding:15px;">
-  © 2026 Arumai Illam | All Rights Reserved
+<div class="card" data-aos="zoom-in">
+<h3>Compassionate Care</h3>
+</div>
+
+</div>
+</div>
+
+<!-- IMPACT -->
+<div class="impact section">
+
+<h2>Our Impact</h2>
+
+<div class="impact-grid">
+
+<div>
+<h3 class="counter" data-target="39">0</h3>
+<p>Years</p>
+</div>
+
+<div>
+<h3 class="counter" data-target="56">0</h3>
+<p>Lives</p>
+</div>
+
+<div>
+<h3 class="counter" data-target="1000">0</h3>
+<p>Impact</p>
+</div>
+
+</div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Support Our Mission</h2>
+<a href="donate.html" class="btn">Donate Now</a>
+</div>
+
+<footer style="text-align:center;padding:15px;background:#2c3e50;color:white;">
+© 2026 Arumai Illam
 </footer>
+
+<!-- JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+
+function toggleMenu(){
+ document.getElementById("navLinks").classList.toggle("show");
+}
+
+function toggleDropdown(e){
+ e.stopPropagation();
+ e.target.parentElement.classList.toggle("show");
+}
+
+window.onclick = function(){
+ document.querySelectorAll(".dropdown").forEach(d=>d.classList.remove("show"));
+}
+
+/* COUNTER */
+const counters=document.querySelectorAll('.counter');
+counters.forEach(c=>{
+ let update=()=>{
+  let target=+c.dataset.target;
+  let count=+c.innerText;
+  let inc=target/100;
+  if(count<target){
+    c.innerText=Math.ceil(count+inc);
+    setTimeout(update,20);
+  } else { c.innerText=target; }
+ };
+ update();
+});
+</script>
 
 </body>
 </html>
