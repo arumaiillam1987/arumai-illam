@@ -166,5 +166,40 @@ Together, this leadership team guides Arumai Illam with integrity, transparency,
 © 2026 Arumai Illam | All Rights Reserved
 </footer>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({duration:1000, once:true});
+
+function toggleMenu(){
+ document.getElementById("navLinks").classList.toggle("show");
+}
+
+function toggleDropdown(e){
+ e.stopPropagation();
+ e.target.parentElement.classList.toggle("show");
+}
+
+window.onclick = function(){
+ document.querySelectorAll(".dropdown").forEach(d=>d.classList.remove("show"));
+}
+
+/* COUNTER */
+const counters=document.querySelectorAll('.counter');
+counters.forEach(c=>{
+ let update=()=>{
+  let target=+c.dataset.target;
+  let count=+c.innerText;
+  let inc=target/100;
+  if(count<target){
+    c.innerText=Math.ceil(count+inc);
+    setTimeout(update,20);
+  } else { c.innerText=target; }
+ };
+ if(c) update();
+});
+</script>
+  
+  
 </body>
+  
 </html>
