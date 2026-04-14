@@ -8,21 +8,138 @@
 
 <body>
 
-<!-- NAVBAR SAME AS HOME -->
+/* NAVBAR */
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#2c3e50;
+  padding:10px 20px;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
 
-<div class="section" data-aos="fade-up">
-<h1>Our Journey of Compassion</h1>
+.logo { font-weight:bold; font-size:20px; }
+
+.nav-links { display:flex; gap:15px; }
+
+.nav-links a, .dropdown button {
+  color:white; text-decoration:none;
+  background:none; border:none;
+  cursor:pointer;
+}
+
+.donate-btn {
+  background:#e74c3c;
+  padding:8px 12px;
+  border-radius:5px;
+}
+
+  <!-- CONTENT -->
+<div class="section">
+
+<h1>🌿 History of Arumai Illam</h1>
 
 <p>
-Founded in 1987, Arumai Illam has served vulnerable communities with dignity and care.
+Arumai Illam was founded on 27th July 1987 in the village of Thittai near Sirkali, Tamil Nadu.
+What began as a small initiative driven by compassion has grown into a dedicated charitable
+organization serving vulnerable communities with dignity and care.
 </p>
 
 <p>
-From a small initiative to a trusted institution, we continue our mission despite funding challenges.
+Guided by the values of love, service, and social responsibility, Arumai Illam has supported
+the elderly, differently-abled individuals, orphaned children, and those abandoned by society.
 </p>
+
+<h2>📌 Key Milestones in Our Journey</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<strong>🏁 1987 – Foundation & Registration</strong>
+<p>Registered under the Tamil Nadu Societies Registration Act (Reg. No. 15/1987).</p>
+</div>
+
+<div class="timeline-item">
+<strong>👂 Early Years – Special School Established</strong>
+<p>Started a school for children with hearing and speech disabilities.</p>
+</div>
+
+<div class="timeline-item">
+<strong>❌ 2012 – Closure of Special School</strong>
+<p>Closed due to resource constraints and changing needs.</p>
+</div>
+
+<div class="timeline-item">
+<strong>🧒 2012 – Integrated Care Home</strong>
+<p>Launched a home for both orphaned children and senior citizens, promoting intergenerational care.</p>
+</div>
+
+<div class="timeline-item">
+<strong>🤝 2012–2025 – Government Support</strong>
+<p>Received grants from the Department of Social Welfare, Government of Tamil Nadu.</p>
+</div>
+
+<div class="timeline-item">
+<strong>🔁 2021 – Community-Based Model</strong>
+<p>Shifted focus towards community-based care; orphanage component closed.</p>
+</div>
+
+<div class="timeline-item">
+<strong>⚠️ 2025 – Grant Discontinued</strong>
+<p>Government grant stopped; continued services through alternative support.</p>
+</div>
 
 </div>
 
+<h2>🌱 Our Work Today</h2>
+
+<div class="highlight">
+<h3>🏠 Home for Senior Citizens and Destitute</h3>
+<ul>
+<li>Safe and clean shelter</li>
+<li>Nutritious meals</li>
+<li>Medical care and assistance</li>
+<li>Emotional and social support</li>
+</ul>
+</div>
+
+<div class="highlight">
+<h3>🧠 School of Hope for Intellectually Disabled Children</h3>
+<ul>
+<li>Basic education</li>
+<li>Life skills training</li>
+<li>Therapeutic and emotional care</li>
+</ul>
+</div>
+
+<h2>💖 Our Legacy & Mission</h2>
+
+<p>
+With over 35 years of service, Arumai Illam continues to stand firm in its commitment to compassion,
+dignity, and care for the most vulnerable.
+</p>
+
+<p>
+Despite challenges, including the loss of government funding, our mission remains unchanged —
+to provide care, restore dignity, and bring hope to those who need it most.
+</p>
+
+<div class="highlight">
+<p><em>
+“Even without support, our commitment continues — because care and compassion cannot be discontinued.”
+</em></p>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer style="background:#2c3e50;color:white;text-align:center;padding:15px;">
+© 2026 Arumai Illam | All Rights Reserved
+</footer>
+  
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
 AOS.init({duration:1000, once:true});
