@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Arumai Illam</title>
 
+<link rel="stylesheet" href="style.css">
+
+<style>
+.section {
+  padding:40px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h1, h2 {
+  text-align:center;
+  color:#2c3e50;
+}
+
+/* VIDEO GRID */
+.video-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  gap:20px;
+  margin-top:30px;
+}
+
+.video iframe {
+  width:100%;
+  height:200px;
+  border-radius:10px;
+}
+
+/* IMAGE GRID */
+.image-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:15px;
+  margin-top:30px;
+}
+
+.image-grid img {
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.note {
+  text-align:center;
+  margin-top:30px;
+  font-style:italic;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html">Home</a>
+
+  <div class="dropdown">
+    <button class="dropbtn">About Us</button>
+    <div class="dropdown-content">
+      <a href="about-history.html">History</a>
+      <a href="about-board.html">Board Members</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Programmes</button>
+    <div class="dropdown-content">
+      <a href="program-seniors.html">Home for Senior Citizens</a>
+      <a href="program-school.html">School for Intellectually Disabled</a>
+    </div>
+  </div>
+
+  <a href="why.html">Why Trust Us?</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="donate.html">Donate</a>
+  <a href="contact.html">Contact Us</a>
+</nav>
+
+<div class="section">
+
+<h1>Gallery</h1>
+
+<p style="text-align:center;">
+A glimpse into our work, care, and community at Arumai Illam.
+</p>
+
+<!-- VIDEOS -->
+<h2>🎥 Videos</h2>
+
+<div class="video-grid">
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/jCoMNDJ6MGw" allowfullscreen></iframe>
+</div>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/BHz7EbZoTDY" allowfullscreen></iframe>
+</div>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/-JlkRXTvmXg" allowfullscreen></iframe>
+</div>
+
+</div>
+
+<!-- IMAGES -->
+<h2>📸 Photo Gallery</h2>
+
+<div class="image-grid">
+
+<!-- Replace these with your real images -->
+<img src="images/photo1.jpg">
+<img src="images/photo2.jpg">
+<img src="images/photo3.jpg">
+<img src="images/photo4.jpg">
+
+</div>
+
+<p class="note">
+“Every smile here is made possible through care, compassion, and support.”
+</p>
+
+</div>
+
+<footer style="background:#2c3e50;color:white;text-align:center;padding:15px;">
+© 2026 Arumai Illam | All Rights Reserved
+</footer>
+
+</body>
+</html>
